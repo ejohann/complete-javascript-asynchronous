@@ -130,9 +130,14 @@
             const tomorrow = data.consolidated_weather[1];
             console.log(`Temperatures in ${data.title} stay between ${today.min_temp} and ${today.max_temp}. Humidity is at ${today.humidity}`);
             console.log(`Tomorrow temperatures in ${data.title} stay between ${tomorrow.min_temp} and ${tomorrow.max_temp}. Humidity is expected to be at ${tomorrow.humidity}`);
+                return data;
             } catch(error){console.log(error);}
         }
-        getWeatherAW(44418);
+       let londonData;
+         getWeatherAW(44418).then(data => {
+             dataLondon = data;
+             console.log(dataLondon);
+             });
         getWeatherAW(2487956);
 
     </script>
