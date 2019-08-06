@@ -83,8 +83,10 @@
             console.log(recipe);
             const related = await getRelated('Johanne');
             console.log(related);
+
+            return recipe;
         }
-        getRecipesAW();
+        getRecipesAW().then(result => console.log(`${result} is the best ever!`));
 
         /*
          getIDs
