@@ -121,6 +121,16 @@
         }
         getWeather(44418);
         getWeather(2487956);
+
+        async function getWeatherAW(locationID){
+            const result = await fetch(`http://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${locationID}/`);
+            const data = await result.json();
+            const today = data.consolidated_weather[0];
+            console.log(`Temperatures in ${data.title} stay between ${today.min_temp} and ${today.max_temp}`);
+        }
+        getWeatherAW(44418);
+        getWeatherAW(2487956);
+
     </script>
 </body>
 </html>
