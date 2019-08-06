@@ -20,6 +20,7 @@
         first();
         */
 
+       /*
         function getRecipe(){
             setTimeout(() => {
                 const recipeID = [323, 883, 422, 974];
@@ -43,6 +44,20 @@
          }
 
         getRecipe();
+        */
+
+        const getIDs = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([323, 883, 422, 974]);
+            },1500);
+        });
+
+         getIDs.then(IDs =>{
+            console.log(IDs);
+         });  
+
+
+
     </script>
 </body>
 </html>
