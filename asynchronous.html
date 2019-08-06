@@ -30,6 +30,14 @@
                         publisher: 'Johanne'
                     };
                     console.log(`${id}: ${recipe.title} `);
+                    setTimeout( publisher => {
+                        const recipe2 = {
+                            title: 'Pizza',
+                            publisher: recipe.publisher
+                        };
+                        console.log(recipe);
+                    }, 1000, recipe.publisher);
+
                 },1000, recipeID[2]);
             }, 1500);
          }
