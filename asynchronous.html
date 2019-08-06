@@ -109,11 +109,11 @@
         function getWeather(locationID){
         fetch(`http://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${locationID}/`)
         .then(result => {
-            console.log(result);
+        //    console.log(result);
              return result.json();
         })
         .then(data => {
-          //console.log(data);
+         //  console.log(data);
             const today = data.consolidated_weather[0];
             console.log(`Temperatures in ${data.title} stay between ${today.min_temp} and ${today.max_temp}`);
         })
@@ -123,10 +123,14 @@
         getWeather(2487956);
 
         async function getWeatherAW(locationID){
+            try{
             const result = await fetch(`http://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${locationID}/`);
             const data = await result.json();
             const today = data.consolidated_weather[0];
-            console.log(`Temperatures in ${data.title} stay between ${today.min_temp} and ${today.max_temp}`);
+            const tomorrow = data.consolidated_weather[1];
+            console.log(`Temperatures in ${data.title} stay between ${today.min_temp} and ${today.max_temp}. Humidity is at ${today.humidity}`);
+            console.log(`Tomorrow temperatures in ${data.title} stay between ${tomorrow.min_temp} and ${tomorrow.max_temp}. Humidity is expected to be at ${tomorrow.humidity}`);
+            } catch(error){console.log(error);}
         }
         getWeatherAW(44418);
         getWeatherAW(2487956);
