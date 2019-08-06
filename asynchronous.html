@@ -45,7 +45,7 @@
 
         getRecipe();
         */
-
+/*
         const getIDs = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve([323, 883, 422, 974]);
@@ -87,7 +87,7 @@
             return recipe;
         }
         getRecipesAW().then(result => console.log(`${result} is the best ever!`));
-
+*/
         /*
          getIDs
          .then(IDs =>{
@@ -106,6 +106,12 @@
         }); 
 
 */
+
+        fetch('http://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/44418/')
+        .then(result => 
+            console.log(result)
+        )
+        .catch(error => console.log(error));
 
     </script>
 </body>
