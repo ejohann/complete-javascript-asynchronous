@@ -24,6 +24,13 @@
             setTimeout(() => {
                 const recipeID = [323, 883, 422, 974];
                 console.log(recipeID);
+                setTimeout((id) => {
+                    const recipe = {
+                        title: 'Fresh Tomato Pasta',
+                        publisher: 'Johanne'
+                    };
+                    console.log(`${id}: ${recipe.title} `);
+                },1000, recipeID[2]);
             }, 1500);
          }
 
