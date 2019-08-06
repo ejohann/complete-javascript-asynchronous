@@ -106,8 +106,8 @@
         }); 
 
 */
-
-        fetch('http://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/44418/')
+        function getWeather(locationID){
+        fetch(`http://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${locationID}/`)
         .then(result => {
             console.log(result);
              return result.json();
@@ -118,7 +118,9 @@
             console.log(`Temperatures in ${data.title} stay between ${today.min_temp} and ${today.max_temp}`);
         })
         .catch(error => console.log(error));
-
+        }
+        getWeather(44418);
+        getWeather(2487956);
     </script>
 </body>
 </html>
