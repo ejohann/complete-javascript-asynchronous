@@ -9,7 +9,7 @@
 <body>
     <h1>Asynchronous JavaScript</h1>
     <script>
-        const second = () => {console.log('Second');
+       /* const second = () => {console.log('Second');
           setTimeout(() => {console.log('Async Hey there');}, 2000);
         }
 
@@ -18,6 +18,16 @@
             console.log('The end');
           }
         first();
+        */
+
+        function getRecipe(){
+            setTimeout(() => {
+                const recipeID = [323, 883, 422, 974];
+                console.log(recipeID);
+            }, 1500);
+         }
+
+        getRecipe();
     </script>
 </body>
 </html>
